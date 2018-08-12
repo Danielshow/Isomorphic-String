@@ -1,20 +1,19 @@
 let input_one = document.getElementById('input_one');
 let input_two = document.getElementById('input_two');
 let btn = document.getElementById('button');
-let error = document.getElementById('error')
+let error = document.getElementById('error');
 
-input_one.addEventListener('keyup', inputAction)
-input_two.addEventListener('keyup', inputAction)
-btn.addEventListener('click', checkIsormophic)
+input_one.addEventListener('keyup', inputAction);
+input_two.addEventListener('keyup', inputAction);
+btn.addEventListener('click', checkIsormophic);
 
 function inputAction(e){
   if (e.which==13 || e.keyCode==13){
-    return false
+    return false;
   }
   //assign variable to length of strings
   let inp1 = input_one.value.length;
   let inp2 = input_two.value.length;
-
   //disable button if input are of different length
   if (inp1 === inp2){
     btn.disabled=false;
@@ -26,33 +25,33 @@ function inputAction(e){
 }
 
 function checkIsormophic(e){
-  e.preventDefault()
-  let inp1 = input_one.value.length
-  let inp2 = input_two.value.length
+  e.preventDefault();
+  let inp1 = input_one.value.length;
+  let inp2 = input_two.value.length;
 
   if (inp1 == 0 && inp2 == 0){
-    error.innerText = "Enter string 1 & string 2 as specified"
+    error.innerText = "Enter string 1 & string 2 as specified";
   }else if(!(isNaN(input_one.value) && isNaN(input_two.value))){
-    error.innerText = "Enter String not Numbers"
+    error.innerText = "Enter String not Numbers";
   }else{
-    let ans = isomorphic(input_one.value, input_two.value)
-    error.innerText = ans
+    let ans = isomorphic(input_one.value, input_two.value);
+    error.innerText = ans;
   }
 }
 
 
 function isomorphic(s, t) {
   if (s.length != t.length) {
-    return ("Error")
+    return ("Error");
   }
 
   let sol = {}
   for (let i = 0; i < s.length; i++) {
     if (sol[s[i]] === undefined) {
-      sol[s[i]] = t[i]
+      sol[s[i]] = t[i];
     } else if (sol[s[i]] !== t[i]) {
       return (false);
     }
   }
-  return (true)
+  return (true);
 }
