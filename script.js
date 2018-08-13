@@ -32,9 +32,9 @@ function checkIsormophic(e){
   let inp2 = input_two.value.length;
 
   if (inp1 == 0 && inp2 == 0){
-    error.innerText = "Enter string 1 & string 2 as specified";
+    error.innerText = "Enter string 1 and string 2 as specified";
   }else if(!(isNaN(input_one.value) && isNaN(input_two.value))){
-    error.innerText = "Enter String not Numbers";
+    error.innerText = "Enter Strings not Numbers";
   }else{
     let ans = isomorphic(input_one.value, input_two.value);
     error.innerText = ans;
@@ -52,8 +52,8 @@ function isomorphic(s, t) {
     if (sol[s[i]] === undefined) {
       sol[s[i]] = t[i];
     } else if (sol[s[i]] !== t[i]) {
-      return (false);
+      return (`False, strings '${s}' and '${t}' are not Isormophic`);
     }
   }
-  return (true);
+  return (`True, strings '${s}' and '${t}' are Isomorphic`);
 }

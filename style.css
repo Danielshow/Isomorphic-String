@@ -39,12 +39,13 @@ body{
   background-color: #222930;
   box-sizing: border-box;
 }
-.left h1{
+.left h3{
   color: #ffffff;
   margin: 0;
   padding: 0;
   text-align: center;
   text-transform: uppercase;
+  margin-top: 10px;
 }
 
 .left p{
@@ -83,6 +84,7 @@ body{
   background-color: #4EB1BA;
   color: #ffffff;
   height: 40px;
+  font-size: 15px;
 }
 .formBox input[type=text]:focus{
   border-bottom: 2px solid #fff;
@@ -102,12 +104,13 @@ body{
   border: none;
 }
 input::placeholder{
-  color: white
+  color: white;
+  font-weight:50;
 }
 
 
 #error{
   width: 100%;
   font-size: 100%;
-  text-transform: uppercase;
+  font-weight: bold;
 }
