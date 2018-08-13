@@ -1,8 +1,10 @@
+//All Id's Needed
 let input_one = document.getElementById('input_one');
 let input_two = document.getElementById('input_two');
 let btn = document.getElementById('button');
 let error = document.getElementById('error');
 
+//EventListener
 input_one.addEventListener('keyup', inputAction);
 input_two.addEventListener('keyup', inputAction);
 btn.addEventListener('click', checkIsormophic);
@@ -22,7 +24,7 @@ function inputAction(e){
     btn.disabled = true;
     error.innerText = "Button Disabled: Enter strings of the same length to enable the button";
   }
-}
+}s
 
 function checkIsormophic(e){
   e.preventDefault();
@@ -39,12 +41,12 @@ function checkIsormophic(e){
   }
 }
 
-
+//Function to Determine Isomorphic strings
 function isomorphic(s, t) {
   if (s.length != t.length) {
     return ("Error");
   }
-
+  //mappings of letters
   let sol = {}
   for (let i = 0; i < s.length; i++) {
     if (sol[s[i]] === undefined) {
